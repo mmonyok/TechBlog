@@ -15,16 +15,24 @@ Blog.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    blogBody: {
-      type: DataTypes.STRING,
+    content: {
+      type: DataTypes.STRING(5000),
       allowNull: false,
     },
-    dateCreated: {
-      type: DataTypes.DATEONLY,
+    date: {
+      type: DataTypes.DATE,
       allowNull: false,
-      // Do i need defaultValue: DataTypes.NOW ?
+      defaultValue: DataTypes.NOW
     },
-    userId: {
+    // creator: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'user',
+    //     key: 'username',
+    //   },
+    // },
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -32,7 +40,6 @@ Blog.init(
         key: 'id',
       },
     },
-    // Need to add a created by that references username.
   },
   {
     sequelize,
