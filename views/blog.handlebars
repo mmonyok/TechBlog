@@ -1,19 +1,27 @@
 <section>
   <div>
-    <p>
-      {{blog.title}}    Posted by {{blog.user.username}} on {{blog.date}}
-    </p>
-    <p>
-      {{blog.content}}
-    </p>
-  </div>
-  {{!-- <div>
-    {{#each commentData as |comment|}}
+    <div>
+      <a href="/editBlog/{{blog.id}}"><button>Edit</button></a>
+      <button id="deleteBtn" data-id="{{blog.id}}">Delete</button>
+    </div>
     <div>
       <p>
-        {{comment.body}}
+        {{blog.title}} Posted by {{blog.user.username}} on {{blog.date}}
+      </p>
+      <p>
+        {{blog.content}}
       </p>
     </div>
-  </div> 
-  need to add if statedment to allow commenting on comments if logged in.--}}
+    {{!-- <div>
+      {{#each commentData as |comment|}}
+      <div>
+        <p>
+          {{comment.body}}
+        </p>
+      </div>
+    </div>
+    need to add if statement to allow commenting on comments if logged in.--}}
+  </div>
 </section>
+
+<script src="../js/deleteBlog.js"></script>

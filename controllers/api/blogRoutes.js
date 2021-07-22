@@ -32,7 +32,33 @@ router.put('/edit/:id', logAuth, async (req, res) => {
       }
     )
 
+    if (!editBlog) {
+      res.status(404).json({ message: 'No blog found with this id!' });
+      return;
+    }
+
     res.status(200).json(editBlog);
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
+router.delete('/delete/:id', logAuth, async (req, res) => {
+  try {
+    const deleteBlog = await Blog.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.userId,
+      },
+    });
+
+    if (!deleteBlog) {
+      res.status(404).json({ message: 'No blog found with this id!' });
+      return;
+    }
+
+    res.status(200).json(deleteBlog);
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
