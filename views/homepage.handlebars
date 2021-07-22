@@ -1,5 +1,9 @@
 <div class="homeBlogContainer">
+  {{#if blogs.length}}
   {{#each blogs as |blog|}}
   {{> blog-details}}
   {{/each}}
+  {{else}}
+  <p>No blogs have been written.</p>
+  {{/if}}
 </div>
