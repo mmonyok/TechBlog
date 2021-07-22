@@ -5,7 +5,6 @@ const editBlogHandler = async (event) => {
   const title = document.querySelector('#editTitle').value;
   const content = document.querySelector('#editContent').value;
   const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
-  console.log(id);
 
   const response = await fetch(`/api/blogs/edit/${id}`, {
     method: 'PUT',
@@ -16,15 +15,10 @@ const editBlogHandler = async (event) => {
   });
 
   if (response.ok) {
-    document.location.replace(`/blog/${id}`);
+    document.location.replace(`/dashboard`);
   } else {
     alert('Failed to edit project.');
   }
 }
 
-/* function test() {
-  console.log("test test");
-} */
-
-// document.querySelector('#editBlogForm').addEventListener('click', test);
 document.querySelector('#editBlogForm').addEventListener('submit', editBlogHandler);

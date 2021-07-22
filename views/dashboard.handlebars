@@ -1,0 +1,18 @@
+<section>
+  <h2>Welcome, {{blogs.username}}</h2>
+  <div>
+    <h3>Your Blogs</h3>
+    {{#if blogs.length}}
+    {{#each blogs as |blog|}}
+    {{> blog-details}}
+    {{/each}}
+    {{else}}
+    <p>Get those fingers clicking!</p>
+    {{/if}}
+  </div>
+  <div>
+    <a href="/dashboard/newBlog"><button>Add New Blog!</button></a>
+  </div>
+</section>
+
+<script src="../js/addBlog.js"></script>

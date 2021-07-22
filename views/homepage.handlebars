@@ -1,10 +1,5 @@
 <div class="homeBlogContainer">
   {{#each blogs as |blog|}}
-    <div class="blogContainer">
-      <p>
-        {{blog.blogTitle}}
-        {{blog.blogBody}}
-      </p>
-    </div>
+  {{> blog-details}}
   {{/each}}
 </div>
