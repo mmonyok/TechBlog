@@ -1,0 +1,30 @@
+const editBlogHandler = async (event) => {
+  event.preventDefault();
+
+  console.log("I will update your blog.")
+  const title = document.querySelector('#editTitle').value;
+  const content = document.querySelector('#editContent').value;
+  const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
+  console.log(id);
+
+  const response = await fetch(`/api/blogs/edit/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify({ title, content, }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (response.ok) {
+    document.location.replace(`/blog/${id}`);
+  } else {
+    alert('Failed to edit project.');
+  }
+}
+
+/* function test() {
+  console.log("test test");
+} */
+
+// document.querySelector('#editBlogForm').addEventListener('click', test);
+document.querySelector('#editBlogForm').addEventListener('submit', editBlogHandler);

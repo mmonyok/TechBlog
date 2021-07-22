@@ -1,0 +1,27 @@
+<div>
+    <h2>Edit This Blog</h2>
+    <form id="editBlogForm">
+        <label for="editTitle">Title</label>
+        <textarea id="editTitle" name="editTitle">{{blog.title}}</textarea>
+
+        <label for="editContent">Content</label>
+        <textarea id="editContent" name="editContent">{{blog.content}}</textarea>
+
+        <button type="submit" value="Submit">Update</button>
+    </form>
+</div>
+
+{{!-- <div>
+    <h2>Edit This Blog</h2>
+    <form method="put" id="editBlogForm">
+        <label for="editTitle">Title</label>
+        <input type="text" data-id="{{blog.id}}" id="editTitle" name="editTitle" value={{blog.title}}>
+
+        <label for="editContent">Content</label>
+        <input id="editContent" name="editContent" value={{blog.content}}>
+
+        <button type="submit" id="editBlog">Update</button>
+    </form>
+</div> --}}
+
+<script src="../js/editBlog.js"></script>
