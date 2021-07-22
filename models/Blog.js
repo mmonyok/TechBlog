@@ -24,14 +24,6 @@ Blog.init(
       allowNull: false,
       defaultValue: DataTypes.NOW
     },
-    // creator: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   references: {
-    //     model: 'user',
-    //     key: 'username',
-    //   },
-    // },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

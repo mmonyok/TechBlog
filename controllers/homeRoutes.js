@@ -78,6 +78,26 @@ router.get('/dashboard/newBlog', logAuth, (req, res) => {
   });
 });
 
+router.get('/editBlog/:id', logAuth, async (req, res) => {
+  try {
+    const blogData = await Blog.findByPk(req.params.id);
+    console.log(blogData);
+
+    if (!blogData) {
+      res.status(404).json({ message: 'No blog found with this id.' });
+      return;
+  }
+
+  const blog = await blogData.get({ plain: true });
+  console.log("rendering editBlog page.");
+  res.render('editBlog', { blog });
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/dashboard');
