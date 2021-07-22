@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog, User } = require('../../models');
+const { Blog } = require('../../models');
 const logAuth = require('../../utils/auth');
 
 router.post('/', logAuth, async (req, res) => {
@@ -19,7 +19,6 @@ router.post('/', logAuth, async (req, res) => {
 
 router.put('/edit/:id', logAuth, async (req, res) => {
   try {
-    console.log("Second attempt to update.");
     const editBlog = await Blog.update(
       {
         title: req.body.title,
