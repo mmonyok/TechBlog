@@ -6,21 +6,26 @@
     </div>
     <div>
       <p>
-        {{blog.title}} Posted by {{blog.user.username}} on {{blog.date}}
+        {{blog.title}} Posted by {{blog.user.username}} on {{format_date blog.date}}
       </p>
       <p>
         {{blog.content}}
       </p>
     </div>
-    {{!-- <div>
-      {{#each commentData as |comment|}}
-      <div>
-        <p>
-          {{comment.body}}
-        </p>
-      </div>
+
+    <div>
+      {{#if loggedIn}}
+      <a href="/newComment/{{blog.id}}"><button>Add a Comment</button></a>
+      {{/if}}
+      {{#if comments.length}}
+      {{#each comments as |comment|}}
+      {{> comment-details}}
+      {{/each}}
+      {{else}}
+      <p>Be the first to Comment!</p>
+      {{/if}}
     </div>
-    need to add if statement to allow commenting on comments if logged in.--}}
+
   </div>
 </section>
 

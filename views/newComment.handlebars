@@ -1,0 +1,36 @@
+<section>
+  <h2>Enter Comment Below</h2>
+  <div>
+    <form method="post" id="newCommentForm">
+
+      <label for="newComment">Comment</label>
+      <input type="text" id="newComment" name="newComment">
+
+      <button type="submit" value="Submit" id="commentBtn">Submit</button>
+    </form>
+  </div>
+  <div>
+    <div>
+      <p>
+        {{blog.title}} Posted by {{blog.user.username}} on {{blog.date}}
+      </p>
+      <p>
+        {{blog.content}}
+      </p>
+    </div>
+
+    <div>
+      {{#if comments.length}}
+      {{#each comments as |comment|}}
+      {{> comment-details}}
+      {{/each}}
+      {{else}}
+      <p>Much empty. So sad.</p>
+      {{/if}}
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<script src="../js/newComment.js"></script>
