@@ -4,3 +4,4 @@ USE blogs_db;
 
 SELECT * FROM user;
 SELECT * FROM blog;
+SELECT * FROM comment;

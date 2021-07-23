@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "content": "This is really great!",
+    "date": "7/22/21",
+    "userID": "2",
+    "blog_id": "1"
+  },
+  {
+    "id": "2",
+    "content": "This is super!",
+    "date": "7/22/21",
+    "userID": "1",
+    "blog_id": "3"
+  },
+  {
+    "id": "3",
+    "content": "This is amazing!",
+    "date": "7/22/21",
+    "userID": "2",
+    "blog_id": "2"
+  }
+]
