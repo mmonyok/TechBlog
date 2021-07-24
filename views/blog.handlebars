@@ -1,32 +1,43 @@
-<section>
+<section class="container container-fluid border col">
   <div>
+    {{#if dashboard}}
     <div>
-      <a href="/editBlog/{{blog.id}}"><button>Edit</button></a>
+      <a href="/dashboard/edit/{{blog.id}}"><button>Edit</button></a>
       <button id="deleteBtn" data-id="{{blog.id}}">Delete</button>
     </div>
-    <div>
-      <p>
-        {{blog.title}} Posted by {{blog.user.username}} on {{format_date blog.date}}
-      </p>
-      <p>
-        {{blog.content}}
-      </p>
-    </div>
+    {{/if}}
+    <secion>
+      <div class="row justify-content-between border py-3">
+        <div class="ml-3">
+          <h3 class="m-0">{{blog.title}}</h3>
+        </div>
+        <div class="mr-3">
+          <h3 class="m-0">Posted by {{blog.user.username}} on {{format_date blog.date}}</h3>
+        </div>
+      </div>
+      <blockquote class="blockquote ml-4">
+        <p>{{blog.content}}</p>
+      </blockquote>
+    </secion>
 
-    <div>
+    <section>
       {{#if loggedIn}}
       <a href="/newComment/{{blog.id}}"><button>Add a Comment</button></a>
       {{/if}}
-      {{#if comments.length}}
-      {{#each comments as |comment|}}
-      {{> comment-details}}
-      {{/each}}
-      {{else}}
-      <p>Be the first to Comment!</p>
-      {{/if}}
-    </div>
-
+      <div class="col p-0">
+        <h4>Comments:</h4>
+        {{#if comments.length}}
+        {{#each comments as |comment|}}
+        {{> comment-details}}
+        {{/each}}
+        {{else}}
+        <p>Be the first to Comment!</p>
+        {{/if}}
+      </div>
+    </section>
   </div>
 </section>
 
+{{#if dashboard}}
 <script src="../js/deleteBlog.js"></script>
+{{/if}}

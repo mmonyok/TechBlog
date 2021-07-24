@@ -1,38 +1,47 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Signup</h2>
+{{!-- Sign Up Code --}}
+{{#if signup}}
+<div class="col-3 border">
+  <h2 class="mt-2">Sign Up</h2>
+  <form class="form signupForm">
+    <div class="formGroup row justify-content-between">
+      <label class="ml-2 my-auto" for="usernameSignup">Username:</label>
+      <input class="formInput mr-2" type="text" id="usernameSignup">
+    </div>
 
-    <form class="form signupForm">
-      <div class="formGroup">
-        <label for="usernameSignup">username:</label>
-        <input class="formInput" type="text" id="usernameSignup" />
-      </div>
-      <div class="formGroup">
-        <label for="passwordSignup">password:</label>
-        <input class="formInput" type="password" id="passwordSignup" />
-      </div>
-      <div class="formGroup">
-        <button class="btn btnPrimary" type="submit">signup</button>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <h2>Login</h2>
+    <div class="formGroup row justify-content-between my-2">
+      <label class="ml-2 my-auto" for="passwordSignup">Password:</label>
+      <input class="formInput mr-2" type="password" id="passwordSignup" />
+    </div>
+    <div class="formGroup row justify-content-between">
+      <button class="btn btn-dark mb-2 ml-3" type="submit"><i class="fas fa-sign-in-alt"></i> Sign
+        Up</button>
+      <a class="my-auto mr-3" href="/login">( <i class="fas fa-user-plus"></i> Log In Here )</a>
+    </div>
+  </form>
+</div>
 
-    <form class="form loginForm">
-      <div class="formGroup">
-        <label for="usernameLogin">username:</label>
-        <input class="formInput" type="text" id="usernameLogin">
-      </div>
-      <div class="formGroup">
-        <label for="passwordLogin">password:</label>
-        <input class="formInput" type="password" id="passwordLogin" />
-      </div>
-      <div class="formGroup">
-        <button class="btn btnPrimary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
+<script src="./js/signup.js"></script>
+{{else}}
+{{!-- Log In Code --}}
+<div class="col-3 border">
+  <h2 class="mt-2">Log In</h2>
+  <form class="form loginForm">
+    <div class="formGroup row justify-content-between">
+      <label class="ml-2 my-auto" for="usernameLogin">Username:</label>
+      <input class="formInput mr-2" type="text" id="usernameLogin">
+    </div>
+
+    <div class="formGroup row justify-content-between my-2">
+      <label class="ml-2 my-auto" for="passwordLogin">Password:</label>
+      <input class="formInput mr-2" type="password" id="passwordLogin" />
+    </div>
+    <div class="formGroup row justify-content-between">
+      <button class="btn btn-dark mb-2 ml-3" type="submit"><i class="fas fa-sign-in-alt"></i> Log In</button>
+      <a class="my-auto mr-3" href="/signup">( <i class="fas fa-user-plus"></i> Sign Up Here )</a>
+    </div>
+  </form>
 </div>
 
 <script src="./js/login.js"></script>
+{{/if}}
+{{!-- End of code. --}}

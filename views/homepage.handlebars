@@ -1,9 +1,12 @@
-<div class="homeBlogContainer">
-  {{#if blogs.length}}
-  {{#each blogs as |blog|}}
-  {{> blog-details}}
-  {{/each}}
-  {{else}}
-  <p>No blogs have been written.</p>
-  {{/if}}
+<div class="border border-5 border-success">
+  <h2 class="border border-3 border-dark text-center my-0">Current Blogs</h2>
+  <div class="col">
+    {{#if blogs.length}}
+    {{#each blogs as |blog|}}
+    {{> blog-details}}
+    {{/each}}
+    {{else}}
+    <h3>Much Empty. <i class="far fa-sad-tear"></i></h3>
+    {{/if}}
+  </div>
 </div>

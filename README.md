@@ -60,7 +60,6 @@ A place to parrot your tech thoughts.
 ![Screenshot of finished project.](relativeLink)
 
 ## Credits
-
 - Technologies Used:
   - [HTML](https://www.w3schools.com/html/)
   - [CSS](https://www.w3schools.com/css/)
@@ -81,6 +80,8 @@ A place to parrot your tech thoughts.
 
 - Additional Assets:
 [Color palette taken from colorhunt.co; it is color palette #264587.](https://colorhunt.co/palette/282007)
+
+[Favicon downloaded from fontawesome. No changes were made.](https://fontawesome.com/license)
 
 ## License
 MIT License

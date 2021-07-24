@@ -1,14 +1,16 @@
-<div>
+<section class="w-50">
     <h2>Create New Blog</h2>
     <form method="post" id="newBlogForm">
-        <label for="newTitle">Title</label>
-        <input type="text" id="newTitle" name="newTitle">
-
-        <label for="newContent">Content</label>
-        <input id="newContent" name="newContent">
-
-        <button type="submit" id="newBlog">Create</button>
+        <div>
+            <label for="newTitle">Title: </label>
+            <input class="form-control" type="text" id="newTitle" name="newTitle">
+        </div>
+        <div style="height: 300px">
+            <label for="newContent">Content: </label>
+            <input id="newContent" class="form-control h-75" name="newContent">
+        </div>
+        <button class="btn btn-dark" type="submit" id="newBlog">Create</button>
     </form>
-</div>
+</section>
 
 <script src="../js/newBlog.js"></script>

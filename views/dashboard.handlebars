@@ -1,16 +1,19 @@
 <section>
-  <h2>Welcome, {{blogs.username}}</h2>
+  <h2>Welcome, {{username}}!</h2>
   <div>
-    <h3>Your Blogs</h3>
-    {{#if blogs.length}}
-    {{#each blogs as |blog|}}
-    {{> blog-details}}
-    {{/each}}
-    {{else}}
-    <p>Get those fingers clicking!</p>
-    {{/if}}
+    <a href="/dashboard/newBlog"><button class="btn btn-dark"><i class="fas fa-plus mr-1"></i> New Blog!</button></a>
   </div>
-  <div>
-    <a href="/dashboard/newBlog"><button>Add New Blog!</button></a>
+  <div class="border border-5 border mt-3">
+    <h2 class="border border-3 border-dark text-center my-0">Your Blogs</h2>
+    <div class="col">
+      {{#if blogs.length}}
+      {{#each blogs as |blog|}}
+      {{> dash-blog-details}}
+      {{/each}}
+      {{else}}
+      <h3>Get those fingers clicking! <i class="far fa-keyboard"></i></h3>
+      {{/if}}
+    </div>
   </div>
+
 </section>
