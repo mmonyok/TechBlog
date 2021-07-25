@@ -1,14 +1,18 @@
-<div>
+<section class="w-50">
     <h2>Edit This Blog</h2>
     <form id="editBlogForm">
-        <label for="editTitle">Title</label>
-        <textarea id="editTitle" name="editTitle">{{blog.title}}</textarea>
+        <div>
+            <label for="editTitle">Title: </label>
+            <input class="form-control" type="text" id="editTitle" name="editTitle" value="{{blog.title}}">
+        </div>
+        <div style="height: 300px">
+            <label for="editContent">Content: </label>
+            <input class="form-control h-75" id="editContent" name="editContent"
+                value="{{blog.content}}">
+            <button class="btn button btn-dark mt-3" type="submit" value="Submit">Update</button>
+        </div>
 
-        <label for="editContent">Content</label>
-        <textarea id="editContent" name="editContent">{{blog.content}}</textarea>
-
-        <button type="submit" value="Submit">Update</button>
     </form>
-</div>
+</section>
 
-<script src="../js/editBlog.js"></script>
+<script src="/js/editBlog.js"></script>

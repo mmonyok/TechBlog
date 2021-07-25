@@ -1,6 +1,44 @@
-/* .border {
-  border: 2px solid green !important;
-} */
+:root {
+  --lightest: #F9F6F2;
+  --bottom: #F1D6AB;
+  --top: #A0855B;
+  --darkest: #38470B;
+}
+
+body {
+  background-color: var(--lightest);
+  color: var(--darkest) !important; 
+}
+
+.border {
+  border: 2px solid var(--top) !important;
+}
+
+.border-bottom {
+  border-bottom: 2px solid var(--top) !important;
+}
+
+.button {
+  background-color: var(--darkest) !important;
+  color: var(--bottom);
+  border-color: var(--darkest) !important;
+}
+
+a {
+  color: var(--darkest);
+}
+
+a:hover {
+  color: var(--top);
+}
+
+.dashLink {
+  color: var(--top);
+}
+
+.dashLink:hover {
+  color: var(--darkest) !important;
+}
 
 footer {
   font-weight: bold;

@@ -57,7 +57,9 @@ A place to parrot your tech thoughts.
 - If you wish to comment on a blog or create a new blog, then you must sign up/log into the sight.
 - Once logged in, you can view your dashboard, where it lists all blogs that you've written. When you click on one of those blogs you can edit the blog or delete it. You will also see any comments made on it.
 
-![Screenshot of finished project.](relativeLink)
+![Screenshot of finished project.](./images/screenshot_1.png)
+![Screenshot of finished project.](./images/screenshot_2.png)
+![Screenshot of finished project.](./images/screenshot_3.png)
 
 ## Credits
 - Technologies Used:
@@ -79,7 +81,7 @@ A place to parrot your tech thoughts.
   - [bcrypt Node Module](https://www.npmjs.com/package/bcrypt)
 
 - Additional Assets:
-[Color palette taken from colorhunt.co; it is color palette #264587.](https://colorhunt.co/palette/282007)
+[Color palette taken from colorhunt.co.](https://colorhunt.co/palette/f9f6f2f1d6aba0855b38470b)
 
 [Favicon downloaded from fontawesome. No changes were made.](https://fontawesome.com/license)
 

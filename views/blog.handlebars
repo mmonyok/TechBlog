@@ -1,13 +1,13 @@
-<section class="container container-fluid border col">
-  <div>
+<section class="container col p-0">
+  <section>
     {{#if dashboard}}
-    <div>
-      <a href="/dashboard/edit/{{blog.id}}"><button>Edit</button></a>
-      <button id="deleteBtn" data-id="{{blog.id}}">Delete</button>
+    <div class="mb-2">
+      <a href="/dashboard/edit/{{blog.id}}"><button class="btn button btn-dark ml-3">Edit Blog</button></a>
+      <button class="ml-3 btn button btn-dark" id="deleteBtn" data-id="{{blog.id}}">Delete Blog</button>
     </div>
     {{/if}}
-    <secion>
-      <div class="row justify-content-between border py-3">
+    <div class="border">
+      <div class="row justify-content-between border-bottom mx-0 my-2">
         <div class="ml-3">
           <h3 class="m-0">{{blog.title}}</h3>
         </div>
@@ -16,28 +16,43 @@
         </div>
       </div>
       <blockquote class="blockquote ml-4">
-        <p>{{blog.content}}</p>
+        <p class="mt-2">{{blog.content}}</p>
       </blockquote>
-    </secion>
+    </div>
+  </section>
 
-    <section>
-      {{#if loggedIn}}
-      <a href="/newComment/{{blog.id}}"><button>Add a Comment</button></a>
-      {{/if}}
-      <div class="col p-0">
-        <h4>Comments:</h4>
-        {{#if comments.length}}
-        {{#each comments as |comment|}}
-        {{> comment-details}}
-        {{/each}}
-        {{else}}
-        <p>Be the first to Comment!</p>
-        {{/if}}
-      </div>
+  <section class="mt-5 ml-5">
+    {{#if loggedIn}}
+    <a href="/newComment/{{blog.id}}"><button class="btn button btn-dark mb-2">Add a Comment</button></a>
+    {{/if}}
+
+    {{#if addComment}}
+    <section class="w-50 m-auto border p-3">
+      <h4>Enter Comment:</h4>
+      <div>
+        <form method="post" id="newCommentForm">
+          <input class="form-control" type="text" id="newComment" name="newComment">
+          <button class="btn button btn-dark mt-2" type="submit" value="Submit" id="commentBtn">Submit</button>
+        </form>
     </section>
-  </div>
+    {{/if}}
+    <div class="col p-0">
+      <h4>Comments:</h4>
+      {{#if comments.length}}
+      {{#each comments as |comment|}}
+      {{> comment-details}}
+      {{/each}}
+      {{else}}
+      <p>Be the first to Comment!</p>
+      {{/if}}
+    </div>
+  </section>
 </section>
 
-{{#if dashboard}}
-<script src="../js/deleteBlog.js"></script>
+{{#if addComment}}
+<script src="../js/newComment.js"></script>
 {{/if}}
+{{#if dashboard}}
+<script src="/js/deleteBlog.js"></script>
+{{/if}}
+{{!-- End of page. --}}

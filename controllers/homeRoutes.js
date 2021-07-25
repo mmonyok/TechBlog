@@ -7,6 +7,7 @@ const logAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     const blogData = await Blog.findAll({
+      order: [['date', 'DESC']],
       include: [
         {
           model: User,
@@ -48,6 +49,7 @@ router.get('/blog/:id', async (req, res) => {
       where: {
         blog_id: req.params.id
       },
+      order: [['date', 'DESC']],
       include: [
         {
           model: User,
@@ -88,6 +90,10 @@ router.get('/newComment/:id', logAuth, async (req, res) => {
     const blog = await blogData.get({ plain: true });
 
     const commentData = await Comment.findAll({
+      where: {
+        blog_id: req.params.id
+      },
+      order: [['date', 'DESC']],
       include: [
         {
           model: User,
@@ -98,9 +104,10 @@ router.get('/newComment/:id', logAuth, async (req, res) => {
 
     const comments = await commentData.map((comment) => comment.get({ plain: true }));
 
-    res.render('newComment', {
+    res.render('blog', {
       blog,
       comments,
+      addComment: true,
       loggedIn: req.session.loggedIn
     });
   } catch (err) {

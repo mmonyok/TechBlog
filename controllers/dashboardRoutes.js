@@ -10,6 +10,7 @@ router.get('/', logAuth, async (req, res) => {
       where: {
         user_id: req.session.userId
       },
+      order: [['date', 'DESC']],
       include: [
         {
           model: User,
@@ -58,6 +59,7 @@ router.get('/blog/:id', async (req, res) => {
       where: {
         blog_id: req.params.id
       },
+      order: [['date', 'DESC']],
       include: [
         {
           model: User,
