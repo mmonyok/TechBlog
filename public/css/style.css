@@ -10,6 +10,18 @@ body {
   color: var(--darkest) !important; 
 }
 
+a {
+  color: var(--darkest);
+}
+
+a:hover {
+  color: var(--top);
+}
+
+footer {
+  font-weight: bold;
+}
+
 .border {
   border: 2px solid var(--top) !important;
 }
@@ -24,14 +36,6 @@ body {
   border-color: var(--darkest) !important;
 }
 
-a {
-  color: var(--darkest);
-}
-
-a:hover {
-  color: var(--top);
-}
-
 .dashLink {
   color: var(--top);
 }
@@ -40,6 +44,6 @@ a:hover {
   color: var(--darkest) !important;
 }
 
-footer {
-  font-weight: bold;
+.title {
+  background-color: var(--bottom);
 }
