@@ -14,9 +14,8 @@ const signUpHandler = async (event) => {
     
     if (response.ok) {
       document.location.replace('/dashboard');
-      console.log("Created User");
     } else {
-      alert(response.statusText);
+      alert('Failed to sign up.');
     }
   }
 };
